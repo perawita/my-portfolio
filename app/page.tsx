@@ -5,6 +5,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <p>ida bagus perawita yasa</p>
       <p>saya suka olahraga</p>
+      <p>pantek</p>
     </main>
   );
 }
