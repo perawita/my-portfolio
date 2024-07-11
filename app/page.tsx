@@ -1,11 +1,13 @@
-import Image from "next/image";
+import RootLayout from "@/app/layout";
+import { Background_Meteor } from "./__components/background_meteor";
+import { Background_Globe } from "@/app/__components/background_globe";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <p>ida bagus perawita yasa</p>
-      <p>saya suka olahraga</p>
-      <p>pantek</p>
-    </main>
+    <RootLayout>
+      <Background_Meteor>
+        <Background_Globe />
+      </Background_Meteor>
+    </RootLayout>
   );
 }
