@@ -3,6 +3,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 
+import { Meteors } from "@/components/ui/meteors";
+
+
 const World = dynamic(() => import("@/components/ui/globe").then((m) => m.World), {
   ssr: false,
 });
@@ -397,6 +400,7 @@ export function Background_Globe() {
   return (
     <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto dark:bg-black bg-white relative w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
+      <Meteors number={20} />
         <motion.div
           initial={{
             opacity: 0,
