@@ -4,7 +4,12 @@ const nextConfig = {
         domains: [
             'aceternity.com',
             'images.unsplash.com',
-            'assets.aceternity.com'
+            'assets.aceternity.com',
+            'commons.wikimedia.org',
+            'cms-assets.tutsplus.com',
+            'images.ctfassets.net',
+            'wallpapercave.com',
+            'github.githubassets.com'
         ],
       },
 };

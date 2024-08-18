@@ -3,33 +3,37 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/utils/cn";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 
 export function Contact_Section() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted");
   };
-  
+
   return (
     <div className="flex flex-col md:flex-row max-w-7xl mx-auto p-4 md:p-8 gap-8">
       {/* Side Content */}
-      <div className="hidden md:flex-1 md:block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow-lg">
-        {/* Add your content here */}
-        <h3 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-          Welcome to Aceternity
-        </h3>
-        <p className="text-neutral-600 text-sm mt-2 dark:text-neutral-300">
-          Login to aceternity if you can because we don&apos;t have a login flow yet
-        </p>
+      <div className="hidden md:flex-1 md:block p-4 rounded-lg shadow-lg">
+
+        <img
+          alt="App screenshot"
+          src="./assets/images/undraw/undraw_message_sent_re_q2kl.svg"
+          className="w-50 h-50 object-contain sm:rounded-md"
+        />
+
       </div>
 
-      {/* Form Section */}
+
+      {/* Form Massage */}
       <div className="flex-1 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+
+        <h3 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
+          Butuh sebuah jawaban ?
+        </h3>
+        <p className="text-neutral-600 text-sm mt-2 dark:text-neutral-300">
+          Hubungi saya melalui forum di bawah untuk mendapatkan jawaban dari pertanyaan anda
+        </p>
+
         <form className="my-8" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
@@ -46,7 +50,7 @@ export function Contact_Section() {
             <Label htmlFor="email">Email Address</Label>
             <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
           </LabelInputContainer>
-          
+
           {/* Textarea */}
           <LabelInputContainer className="mb-8">
             <Label htmlFor="message">Message</Label>

@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import { HeroParallax } from "@/components/ui/hero-parallax";
+import Loading from '@/app/__components/loading';
+import { Suspense } from 'react';
 
 export function Hero_Parallax() {
   return <HeroParallax products={products} />;
 }
+
 export const products = [
   {
     title: "Moonbeam",

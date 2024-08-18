@@ -1,24 +1,29 @@
 import RootLayout from '@/app/layout';
 import { Navbars } from '@/app/__components/navbar';
-import { Background_Globe } from '@/app/__components/background_globe';
+import { Background } from '@/app/__components/background';
 import { Hero_Parallax } from '@/app/__components/hero_paralx';
 import { Features_Section } from '@/app/__components/features_section';
-import { Contact_Section } from './__components/contact_section';
+import { Contact_Section } from '@/app/__components/contact_section';
+import Loading from '@/app/loading';
+import { Suspense } from 'react';
 
-interface HomeProps{
-  params: {lang: string}
-}
-
-export default function Home() 
-{
-
+export default function Home() {
   return (
     <RootLayout>
       <Navbars />
-      <Background_Globe />
-      <Hero_Parallax />
-      <Features_Section />
-      <Contact_Section />
+      <Suspense fallback={<Loading />}>
+        <Background />
+        <Hero_Parallax />
+        <Features_Section />
+        <Contact_Section />
+      </Suspense>
     </RootLayout>
   );
 }
+
+// list yang bisa di buat menambahkan fortofolio
+// web
+// undangan pernikahan
+
+// library
+// payment bank

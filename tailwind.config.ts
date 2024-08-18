@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       animation: {
         "meteor-effect": "meteor 5s linear infinite",
+            shimmer: "shimmer 2s linear infinite"
       },
       keyframes: {
         meteor: {
@@ -20,11 +21,19 @@ const config: Config = {
             opacity: "0",
           },
         },
+
+        shimmer: {
+          from: {
+            "backgroundPosition": "0 0"
+          },
+          to: {
+            "backgroundPosition": "-200% 0"
+          }
+        }
       },
     },
 
 },
-
 
   plugins: [],
 };

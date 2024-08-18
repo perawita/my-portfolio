@@ -5,7 +5,7 @@ import "@/app/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ida bagus perawita yasa",
+  title: process.env.NEXT_PUBLIC_NAME_APP,
   description: "Wellcome to my fortofolio i hope you like",
 };
 

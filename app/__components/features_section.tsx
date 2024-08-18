@@ -5,38 +5,39 @@ import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
 import Link from "next/link";
+
 
 export function Features_Section() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Desain perangkat lunak pada bahasa pemerograman native menggunakan MVC",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Saya akan menggunakan design patterns yaitu MVC (Model-View-Controller) agar client dapat lebih mudah melakukan pengembangan lanjutan kedepanya.",
       skeleton: <SkeletonOne />,
       className:
         "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
     },
     {
-      title: "Capture pictures with AI",
+      title: "Penggunaan teknologi",
       description:
-        "Capture stunning photos effortlessly using our advanced AI technology.",
+        "Saya akan menggunakan teknologi populer untuk menyelesaikan sebuah aplikasi, namun lebih mengutamakan teknologi yang sudah di sepakati bersama client.",
       skeleton: <SkeletonTwo />,
       className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
     },
     {
-      title: "Watch our AI on YouTube",
+      title: "Penggunaan library dari github",
       description:
-        "Whether its you or Tyler Durden, you can get to know about our product on YouTube",
+        "Saya biasanya membuat sebuah library dan menyimpanya di dalam github agar dapat saya gunakan ataupun orang lain menggunakanya di dalam project yang sedang di kerjakan apabila di butuhkan",
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
     },
     {
-      title: "Deploy in seconds",
+      title: "Deploy hanya beberapa menit",
       description:
-        "With our blazing fast, state of the art, cutting edge, we are so back cloud servies (read AWS) - you can deploy your model in seconds.",
+        "Buat website anda dapat di akses secara online dalam hitungan menit.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
@@ -45,12 +46,13 @@ export function Features_Section() {
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
         <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          Packed with thousands of features
+          Fakta tentang jasa saya
         </h4>
 
         <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
-          From Image generation to video generation, Everything AI has APIs for
-          literally everything. It can even create this website copy for you.
+          Beberapa keahilian saya dalam menyelesaikan sebuah project yang saya dapatkan.
+          keahlian ini dapat berguna untuk mempercepat pengerjaan sebuah pengerjaan aplikasi
+          tanpa mengurangi keamaan dan fungsi dari aplikasinya
         </p>
       </div>
 
@@ -130,21 +132,23 @@ export const SkeletonOne = () => {
 export const SkeletonThree = () => {
   return (
     <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+      href="https://github.com/perawita?tab=repositories"
       target="__blank"
       className="relative flex gap-10  h-full group/image"
     >
       <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
           {/* TODO */}
-          <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
+          <IconBrandGithub className="h-20 w-20 absolute z-10 inset-0 dark:text-neutral-300 m-auto " />
+
           <Image
-            src="https://assets.aceternity.com/fireship.jpg"
+            src="/assets/images/thumbnail/gihtub-my-profile.png"
             alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
+            width={1600}
+            height={1600}
+            className="h-full w-full aspect-square object-cover object-left rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
           />
+
         </div>
       </div>
     </Link>
@@ -153,10 +157,10 @@ export const SkeletonThree = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://cms-assets.tutsplus.com/uploads/users/71/courses/854/preview_image/get-started-with-laravel-6-400x277.png",
+    "https://wallpapercave.com/wp/wp5191387.jpg",
+    "https://images.ctfassets.net/23aumh6u8s0i/c04wENP3FnbevwdWzrePs/1e2739fa6d0aa5192cf89599e009da4e/nextjs",
+    "https://wallpapercave.com/wp/wp5191387.jpg",
     "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
@@ -257,7 +261,7 @@ export const Globe = ({ className }: { className?: string }) => {
       glowColor: [1, 1, 1],
       markers: [
         // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [-6.2088, 106.8456], size: 0.03 },
         { location: [40.7128, -74.006], size: 0.1 },
       ],
       onRender: (state) => {
