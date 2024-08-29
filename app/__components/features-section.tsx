@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
-import { cn } from "@/utils/cn";
-import Image from "next/image";
-import createGlobe from "cobe";
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+
+import React, { useEffect, useRef, useState } from "react";
 import { IconBrandGithub } from "@tabler/icons-react";
+import { motion } from "framer-motion";
+import { cn } from "@/utils/cn";
+import createGlobe from "cobe";
+import Image from "next/image";
 import Link from "next/link";
 
 
@@ -37,7 +37,7 @@ export function Features_Section() {
     {
       title: "Deploy hanya beberapa menit",
       description:
-        "Buat website anda dapat di akses secara online dalam hitungan menit.",
+        "Saya bisa membuat website anda dapat di akses secara online dalam hitungan menit.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
     },
@@ -114,11 +114,11 @@ export const SkeletonOne = () => {
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           {/* TODO */}
           <Image
-            src="/linear.webp"
+            src="/assets/images/thumbnail/mvc-ss-code.png"
             alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
+            width={1600}
+            height={1600}
+            className="h-full w-full aspect-square object-cover object-left rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
           />
         </div>
       </div>
@@ -131,27 +131,27 @@ export const SkeletonOne = () => {
 
 export const SkeletonThree = () => {
   return (
-    <Link
-      href="https://github.com/perawita?tab=repositories"
-      target="__blank"
-      className="relative flex gap-10  h-full group/image"
-    >
-      <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
-          {/* TODO */}
-          <IconBrandGithub className="h-20 w-20 absolute z-10 inset-0 dark:text-neutral-300 m-auto " />
+      <Link
+        href="https://github.com/perawita?tab=repositories"
+        target="__blank"
+        className="relative flex gap-10  h-full group/image"
+      >
+        <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
+          <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
+            {/* TODO */}
+            <IconBrandGithub className="h-20 w-20 absolute z-10 inset-0 dark:text-neutral-300 m-auto " />
 
-          <Image
-            src="/assets/images/thumbnail/gihtub-my-profile.png"
-            alt="header"
-            width={1600}
-            height={1600}
-            className="h-full w-full aspect-square object-cover object-left rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
-          />
+            <Image
+              src="/assets/images/thumbnail/gihtub-my-profile.png"
+              alt="header"
+              width={1600}
+              height={1600}
+              className="h-full w-full aspect-square object-cover object-left rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
+            />
 
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
   );
 };
 
@@ -161,8 +161,20 @@ export const SkeletonTwo = () => {
     "https://wallpapercave.com/wp/wp5191387.jpg",
     "https://images.ctfassets.net/23aumh6u8s0i/c04wENP3FnbevwdWzrePs/1e2739fa6d0aa5192cf89599e009da4e/nextjs",
     "https://wallpapercave.com/wp/wp5191387.jpg",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://th.bing.com/th/id/OIP.lflm3p0jvoC4p8c-j8zfJgHaEk?rs=1&pid=ImgDetMain",
   ];
+
+  const [styles, setStyles] = useState<{ [key: number]: React.CSSProperties }>({});
+
+  useEffect(() => {
+    const newStyles: { [key: number]: React.CSSProperties } = {};
+    images.forEach((_, idx) => {
+      newStyles[idx] = {
+        rotate: `${Math.random() * 20 - 10}deg`,
+      };
+    });
+    setStyles(newStyles);
+  }, []);
 
   const imageVariants = {
     whileHover: {
@@ -176,17 +188,15 @@ export const SkeletonTwo = () => {
       zIndex: 100,
     },
   };
+
   return (
     <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
-      {/* TODO */}
       <div className="flex flex-row -ml-20">
         {images.map((image, idx) => (
           <motion.div
             variants={imageVariants}
             key={"images-first" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
+            style={styles[idx]}
             whileHover="whileHover"
             whileTap="whileTap"
             className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
@@ -194,8 +204,8 @@ export const SkeletonTwo = () => {
             <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
             />
           </motion.div>
@@ -205,9 +215,7 @@ export const SkeletonTwo = () => {
         {images.map((image, idx) => (
           <motion.div
             key={"images-second" + idx}
-            style={{
-              rotate: Math.random() * 20 - 10,
-            }}
+            style={styles[idx]}
             variants={imageVariants}
             whileHover="whileHover"
             whileTap="whileTap"
@@ -216,8 +224,8 @@ export const SkeletonTwo = () => {
             <Image
               src={image}
               alt="bali images"
-              width="500"
-              height="500"
+              width={500}
+              height={500}
               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
             />
           </motion.div>

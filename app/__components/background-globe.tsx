@@ -429,5 +429,5 @@ export function Background_Globe() {
         </div>
       </div>
     </div>
-  );
+  )
 }

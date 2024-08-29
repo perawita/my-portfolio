@@ -9,7 +9,8 @@ const nextConfig = {
             'cms-assets.tutsplus.com',
             'images.ctfassets.net',
             'wallpapercave.com',
-            'github.githubassets.com'
+            'github.githubassets.com',
+            'th.bing.com'
         ],
       },
 };

@@ -1,54 +1,113 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/utils/cn";
 
 export function Contact_Section() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formData, setFormData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    const data = {
+      fullname: `${formData.firstname} ${formData.lastname}`,
+      from: formData.email,
+      subject: `<${process.env.NEXT_PUBLIC_NAME_APP}> New Message from Contact Form`,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND}/api/contact/users/email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        // Handle successful submission (e.g., show a success message)
+        alert("Message sent successfully!");
+      } else {
+        // Handle error (e.g., show an error message)
+        alert("Failed to send the message. Please try again.");
+      }
+    } catch (error) {
+      // Handle network error
+      console.error("Error sending message:", error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   return (
     <div className="flex flex-col md:flex-row max-w-7xl mx-auto p-4 md:p-8 gap-8">
       {/* Side Content */}
       <div className="hidden md:flex-1 md:block p-4 rounded-lg shadow-lg">
-
         <img
           alt="App screenshot"
           src="./assets/images/undraw/undraw_message_sent_re_q2kl.svg"
           className="w-50 h-50 object-contain sm:rounded-md"
         />
-
       </div>
 
-
-      {/* Form Massage */}
+      {/* Form Message */}
       <div className="flex-1 max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-
         <h3 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
           Butuh sebuah jawaban ?
         </h3>
         <p className="text-neutral-600 text-sm mt-2 dark:text-neutral-300">
-          Hubungi saya melalui forum di bawah untuk mendapatkan jawaban dari pertanyaan anda
+          Hubungi saya melalui forum di bawah untuk mendapatkan jawaban dari pertanyaan anda.
         </p>
 
         <form className="my-8" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
             <LabelInputContainer>
               <Label htmlFor="firstname">First name</Label>
-              <Input id="firstname" placeholder="Tyler" type="text" />
+              <Input
+                id="firstname"
+                name="firstname"
+                placeholder="Tyler"
+                type="text"
+                value={formData.firstname}
+                onChange={handleChange}
+              />
             </LabelInputContainer>
             <LabelInputContainer>
               <Label htmlFor="lastname">Last name</Label>
-              <Input id="lastname" placeholder="Durden" type="text" />
+              <Input
+                id="lastname"
+                name="lastname"
+                placeholder="Durden"
+                type="text"
+                value={formData.lastname}
+                onChange={handleChange}
+              />
             </LabelInputContainer>
           </div>
 
           <LabelInputContainer className="mb-4">
             <Label htmlFor="email">Email Address</Label>
-            <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+            <Input
+              id="email"
+              name="email"
+              placeholder="projectmayhem@fc.com"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </LabelInputContainer>
 
           {/* Textarea */}
@@ -56,9 +115,12 @@ export function Contact_Section() {
             <Label htmlFor="message">Message</Label>
             <textarea
               id="message"
+              name="message"
               placeholder="Your message here..."
               rows={4}
               className="border rounded-md p-2 w-full resize-none bg-gray-50 dark:bg-zinc-900 dark:text-white"
+              value={formData.message}
+              onChange={handleChange}
             />
           </LabelInputContainer>
 
@@ -71,7 +133,6 @@ export function Contact_Section() {
           </button>
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
         </form>
       </div>
     </div>

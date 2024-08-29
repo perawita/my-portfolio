@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: process.env.NEXT_PUBLIC_NAME_APP,
-  description: "Wellcome to my fortofolio i hope you like",
+  description: "Welcome to my portfolio, I hope you like it",
 };
 
 export default function RootLayout({
@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
-  );
+  )
 }

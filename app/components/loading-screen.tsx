@@ -19,7 +19,6 @@ export default function Loading_Screen () {
 
   return (
     <div className="loading-screen">
-      {/* Konten loading screen */}
       Loading...
     </div>
   );
