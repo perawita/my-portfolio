@@ -110,7 +110,7 @@ function Navbar({ className, disableButton }: NavbarProps) {
           </MenuItem>
         )}
 
-        {disableButton !== "Pricing" && (
+        {/* {disableButton !== "Pricing" && (
           <MenuItem setActive={setActive} active={active} item="Pricing">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/hobby">Hobby</HoveredLink>
@@ -119,7 +119,7 @@ function Navbar({ className, disableButton }: NavbarProps) {
               <HoveredLink href="/enterprise">Enterprise</HoveredLink>
             </div>
           </MenuItem>
-        )}
+        )} */}
       </Menu>
     </div>
   );

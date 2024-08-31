@@ -10,7 +10,8 @@ const nextConfig = {
             'images.ctfassets.net',
             'wallpapercave.com',
             'github.githubassets.com',
-            'th.bing.com'
+            'th.bing.com',
+            'api-my-portofolio.vercel.app'
         ],
       },
 };
