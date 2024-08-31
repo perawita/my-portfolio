@@ -14,10 +14,3 @@ export default function Home() {
     </>
   )
 }
-
-// list yang bisa di buat menambahkan fortofolio
-// web
-// undangan pernikahan
-
-// library
-// payment bank
