@@ -94,7 +94,7 @@ function Navbar({ className, disableButton }: NavbarProps) {
           </MenuItem>
         )}
 
-        {disableButton !== "Products" && (
+        {/* {disableButton !== "Products" && (
           <MenuItem setActive={setActive} active={active} item="Products">
             <div className="  text-sm grid grid-cols-2 gap-10 p-4">
               {products.map((data, index) => (
@@ -108,7 +108,7 @@ function Navbar({ className, disableButton }: NavbarProps) {
               ))}
             </div>
           </MenuItem>
-        )}
+        )} */}
 
         {/* {disableButton !== "Pricing" && (
           <MenuItem setActive={setActive} active={active} item="Pricing">
