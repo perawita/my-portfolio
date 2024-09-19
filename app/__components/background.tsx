@@ -10,7 +10,7 @@ export function Background() {
 
     return (
         <div className="flex flex-col items-center justify-center py-20 min-h-screen bg-white dark:bg-black">
-            <div className="w-full max-w-7xl px-4 mx-auto md:h-auto lg:flex lg:items-center">
+            <div className="w-full max-w-7xl mx-auto md:h-auto lg:flex lg:items-center">
                 <div className="relative isolate overflow-hidden px-6 py-16 shadow-2xl sm:rounded-3xl sm:px-16 md:py-24 lg:flex lg:gap-x-20 lg:px-24 lg:py-16">
 
                     <motion.div
@@ -35,7 +35,7 @@ export function Background() {
                             semenjak 2021, dan memulai sebagai freelance aktif dari tahun 2024
                         </p>
 
-                        <a href="/services" className="inline-flex h-12 mt-4 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                        <a href="/services" className="inline-flex h-12 mt-4 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium md:text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                             Ingin mencoba jasa saya ?
                         </a>
                     </motion.div>
